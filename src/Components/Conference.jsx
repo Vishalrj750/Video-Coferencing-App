@@ -40,6 +40,18 @@ function Conference() {
         }
     }
     `
+    React.useEffect(() => {
+        const date = Date.now();
+
+        return () => {
+            const total_time = Date.now() - date;
+            const seconds = (total_time / 1000);
+            const minutes = (seconds / 60).toFixed(2);
+            if(minutes > 0.05){
+                alert(`Meeting Duration --->>> ${minutes} minutes`);
+            }
+        }
+    }, [])
     const hmsActions = useHMSActions();
     const handleClick = () => {
         hmsActions.leave();
