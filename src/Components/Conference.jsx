@@ -8,16 +8,17 @@ function Conference() {
 
     const ConferenceWrapper = styledComponents.div`
     .conference-section{
-        width: 100vw;
-        height: 100vh;
+        width: 98vw;
+        height: 98vh;
         background-color: gray;
         position: relative;
     }
-    // .peers-container{
-    //     display: grid;
-    //     grid-template-column: repeat(4, 1fr);
-    //     gap: 20px;
-    // }
+    .peers-container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        position: relative;
+    }
     .leave-btn{
         display: inline;
         padding: 10px;
@@ -27,6 +28,16 @@ function Conference() {
         position: absolute;
         top: 0;
         left: 0;
+    }
+    @media only screen and (max-width: 650px) {
+        .peers-container{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        .peers-container{
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
     `
     const hmsActions = useHMSActions();
@@ -43,7 +54,10 @@ function Conference() {
 
             <div className="peers-container">
                 {peers.map((peer) => (
-                <Peer key={peer.id} peer={peer} />
+                <div key={peer.id}>
+                    <Peer key={peer.id} peer={peer} />
+                    
+                </div>
                 ))}
             </div>
             <Footer/>

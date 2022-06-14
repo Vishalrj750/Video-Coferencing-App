@@ -46,11 +46,11 @@ function JoinForm() {
         justify-content: center;
     }
     .input-container{
-        width: 20%;
+        width: 100%;
         height: 5%;
     }
     .input-container input{
-        width: 100%;
+        width: 30%;
         height: 100%;
         border-radius: 25px;
         font-size: 18px;
@@ -70,6 +70,12 @@ function JoinForm() {
     .btn-primary:hover{
         background-color: white;
         color: blue;
+    }
+    @media only screen and (max-width: 600px) {
+        .input-container input{
+            width: 50%;
+            height: 100%;
+        }
     }
     `
 
