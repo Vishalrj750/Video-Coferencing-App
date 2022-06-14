@@ -10,7 +10,7 @@ function Conference() {
     .conference-section{
         width: 100vw;
         height: 100vh;
-        background-color: black;
+        background-color: gray;
         position: relative;
     }
     // .peers-container{
