@@ -83,7 +83,8 @@ function JoinForm() {
   const [userName, setUserName] = useState("");
 
   const handleInputChange = (e) => {
-    setUserName(e.target.value);
+    // e.preventDefault();
+    setUserName(e);
   };
 
   const handleSubmitAsHost = async (e) => {
@@ -112,7 +113,8 @@ function JoinForm() {
                 <input
                 required
                 value={userName}
-                onChange={handleInputChange}
+                autoFocus
+                onChange={(e) => handleInputChange(e.target.value)}
                 id="name"
                 type="text"
                 name="name"
